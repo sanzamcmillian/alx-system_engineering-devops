@@ -24,3 +24,29 @@ Single Point of Failure (SPOF): Since there's only one server, if it goes down, 
 Downtime during Maintenance: When maintenance is needed, such as deploying new code that requires restarting the web server, the website will experience downtime. This can disrupt user access and lead to a negative user experience. Implementing strategies like rolling updates or using a load balancer with multiple instances can help minimize downtime during maintenance.
 
 Scalability Issues: If the website experiences a sudden increase in traffic, the single server may struggle to handle the load effectively. This can lead to slow performance or even crashes. Implementing scalability solutions like load balancers, auto-scaling, and distributed databases can help handle increased traffic more effectively.
+
+
+Task 1`distributed_web_infrastructure Explanation:
+Web Servers (Nginx, App, DB): Each server hosts Nginx for web serving, application logic, and a database. Distributing components across servers ensures redundancy and fault tolerance.
+
+Load Balancer: Balances incoming traffic across web servers for scalability and reliability. Terminates SSL to encrypt traffic and offload decryption from the web servers.
+Firewalls: Added for network security to control incoming and outgoing traffic. They protect servers from unauthorized access, malware, and other threats.
+
+SSL Certificate (HTTPS): Encrypts data transmitted between the web server and clients, ensuring confidentiality and integrity. It's essential for securing sensitive information like passwords and payment details.
+
+Monitoring Clients: Collect data on server performance, availability, and security. Essential for identifying and addressing issues proactively.
+Specifics:
+
+Firewalls: Control access to the servers, preventing unauthorized access and protecting against network attacks.
+HTTPS: Encrypts data transmitted over the network, preventing eavesdropping and tampering.
+
+Monitoring: Used to track server health, performance metrics, and security incidents. Sumo Logic collects data from servers and analyzes it to provide insights and alerts.
+
+Monitoring QPS: To monitor web server QPS, you can track the number of incoming requests per second using monitoring tools. Set up alerts for unusual spikes or drops in QPS.
+Issues:
+
+SSL Termination at Load Balancer: While terminating SSL at the load balancer improves performance, it introduces a potential security risk as decrypted traffic traverses the internal network.
+
+Single MySQL Server for Writes: Having only one MySQL server capable of accepting writes creates a single point of failure. If the server fails, write operations become unavailable, impacting application functionality.
+
+Identical Servers: Using servers with the same components increases vulnerability to widespread failures. If a critical component fails across all servers simultaneously (e.g., Nginx), the entire infrastructure may become unavailable. It's advisable to diversify components to minimize this risk.
