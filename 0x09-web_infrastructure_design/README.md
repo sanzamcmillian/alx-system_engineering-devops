@@ -72,3 +72,21 @@ SSL Termination at Load Balancer: Terminating SSL at the load balancer poses a s
 Single MySQL Server for Writes: Having only one MySQL server capable of accepting writes creates a single point of failure. If the server fails, write operations become unavailable, impacting application functionality.
 Identical Servers: Using servers with the same components increases vulnerability to widespread failures. If a critical component fails across all servers simultaneously (e.g., Nginx), the entire infrastructure may become unavailable. It's advisable to diversify components to minimize this risk.
 
+Task 3: Scale up
+
+Improvements:
+
+Redundancy:
+Two identical web servers (Web Server 1 and Web Server 2) for load balancing and high availability.
+Two application servers and two database servers for redundancy and fault tolerance.
+Load Balancing:
+Implement a load balancer (not shown in the diagram) in front of the web servers to distribute incoming traffic evenly between them.
+Scalability:
+The infrastructure can easily scale by adding more web servers, application servers, or database servers as needed.
+Security Measures:
+Configure firewalls to control traffic and restrict access to the servers.
+Implement SSL/TLS certificates for encrypting traffic between clients and servers.
+Monitoring:
+Set up monitoring tools to track server performance, resource utilization, and security incidents.
+Use monitoring clients to collect data and provide insights into the health and status of the infrastructure.
+With these improvements, the web infrastructure is more resilient, scalable, secure, and easier to manage. It can handle increased traffic, mitigate failures, and ensure the availability and integrity of the web application.
