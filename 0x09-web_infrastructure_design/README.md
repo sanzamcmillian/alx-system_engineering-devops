@@ -27,6 +27,7 @@ Scalability Issues: If the website experiences a sudden increase in traffic, the
 
 
 Task 1`distributed_web_infrastructure Explanation:
+
 Web Servers (Nginx, App, DB): Each server hosts Nginx for web serving, application logic, and a database. Distributing components across servers ensures redundancy and fault tolerance.
 
 Load Balancer: Balances incoming traffic across web servers for scalability and reliability. Terminates SSL to encrypt traffic and offload decryption from the web servers.
