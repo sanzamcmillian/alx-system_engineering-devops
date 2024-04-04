@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # SSH client configuration
 
-Host 52.91.120.212
+Host 54.237.120.24
     PasswordAuthentication no
     IdentityFile ~/.ssh/school
     SendEnv LANG LC_*
